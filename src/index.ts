@@ -5,6 +5,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 
 import { authRouter } from "./routes/auth.js";
+import { accountRouter } from "./routes/account.ts";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/auth", authRouter);
+app.use("/accounts", accountRouter);
 
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
