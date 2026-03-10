@@ -32,11 +32,6 @@ export async function register(req: Request, res: Response) {
       name,
       email,
       password: hashedPassword,
-      accounts: {
-        create: {
-          balance: 0,
-        },
-      },
     },
     include: {
       accounts: true,
